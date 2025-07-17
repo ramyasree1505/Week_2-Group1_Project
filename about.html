@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Shop - About Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - My Shop</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
   <header>
-    <h1>About My Shop</h1>
+    <h1>About <span class="highlight">My Shop</span></h1>
   </header>
-  
-  <header>
 
   <nav>
     <a href="index.html">Home</a>
@@ -19,26 +18,60 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
-  </header>
 
-  <main class="about">
+  <main class="about-page">
     <section class="about-intro">
-      <h2>Our Mission</h2>
-      <p>At My Shop, we believe everyone deserves access to affordable, high-quality products. We are passionate about delivering exceptional customer service and curating products that bring joy and value to your everyday life.</p>
+      <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+      <p>We aim to provide top-notch tech gadgets at affordable prices. Our mission is to bring you joy, comfort, and a seamless shopping experience every single time.</p>
     </section>
 
     <section class="about-image">
-      <img src="images/team.jpg" alt="Our Team" />
+      <img src="images/MembersofGroup" alt="Our Team" />
     </section>
 
     <section class="about-team">
-      <h2>Meet Our Team</h2>
-      <p>We're a team of passionate creators, curators, and customer care experts working together to make your shopping experience seamless and enjoyable.</p>
+      <h2><i class="fas fa-users"></i> Meet Our Team</h2>
+      <p>We are a dynamic team of tech lovers, creatives, and customer-first professionals building a brand that you can trust and love.</p>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="images/Members" alt="Member 1">
+          <h4>Ashwin - CEO</h4>
+        </div>
+        <div class="team-member">
+          <img src="images/Members" alt="Member 2">
+          <h4>Priya - Marketing Head</h4>
+        </div>
+        <div class="team-member">
+          <img src="images/Members" alt="Member 3">
+          <h4>Raj - Product Lead</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values">
+      <h2><i class="fas fa-heart"></i> What We Value</h2>
+      <ul>
+        <li><i class="fas fa-shipping-fast"></i> Fast & Reliable Shipping</li>
+        <li><i class="fas fa-tags"></i> Affordable Pricing</li>
+        <li><i class="fas fa-thumbs-up"></i> Quality Products</li>
+        <li><i class="fas fa-smile"></i> Excellent Customer Support</li>
+      </ul>
     </section>
   </main>
 
   <footer>
     © 2025 My Shop. All rights reserved.
   </footer>
+
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    links.forEach(link => {
+      if (link.getAttribute('href') === current) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>
