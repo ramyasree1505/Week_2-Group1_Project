@@ -1,27 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>My Shop - Products</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="products.css">
 </head>
 <body>
-  <header><h1>Our Products</h1></header>
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+
+  <header>
+    <h1>Our Products</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
   <main>
     <h2>Popular Items</h2>
     <ul>
-      <li>Product 1 - ₹499</li>
-      <li>Product 2 - ₹899</li>
-      <li>Product 3 - ₹1,299</li>
-    </ul>
+    <li>Product 1 - ₹499</li>
+    <li>Product 2 - ₹899</li>
+    <li>Product 3 - ₹1,299</li>
+    <li>Bluetooth Headphones - ₹1,499</li>
+    <li>Smartwatch - ₹2,499</li>
+    <li>Wireless Earbuds - ₹1,999</li>
+    <li>Stylish Sunglasses - ₹799</li>
+    <li>Casual Backpack - ₹1,299</li>
+    <li>Running Shoes - ₹2,999</li>
+    <li>Trendy Hoodie - ₹1,899</li>
+  </ul>
   </main>
-  <footer>© 2025 My Shop</footer>
+
+  <footer>© 2025 My Shop. All rights reserved.</footer>
+
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+
+    links.forEach(link => {
+      if (link.getAttribute('href') === current) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>

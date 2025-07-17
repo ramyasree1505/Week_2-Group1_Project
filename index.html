@@ -3,59 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tech Shop</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Tech Gadgets Store</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
-    <h1>Tech Gadget Store</h1>
+    <div class="header-content">
+      <h1>Tech Gadgets Store</h1>
+      <div class="nav-buttons">
+        <a href="#" class="button button-login">Login</a>
+        <a href="#" class="button button-signup">Sign Up</a>
+      </div>
+    </div>
     <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main class="product-grid">
+  <section class="hero">
+    <h2>Welcome to the Tech Gadgets Store</h2>
+    <p>Find the hottest deals on your favorite gadgets!</p>
+    <a href="#products" class="button">Shop Now</a>
+  </section>
+
+  <section class="product-grid">
     <div class="product-card">
-      <img src="https://via.placeholder.com/200x150?text=Headphones" alt="Headphones" />
+      <img src="images/Rockerz_551_ANC_Pro.347_1.webp" alt="Headphones" />
       <h2>Wireless Headphones</h2>
       <p>₹2,499</p>
       <button>Add to Cart</button>
     </div>
-    
+
     <div class="product-card">
-      <img src="https://via.placeholder.com/200x150?text=Gaming+Mouse" alt="Gaming Mouse" />
+      <img src="images/01Qmve2i5k5N8RTGMZuziyi-1.webp" alt="Gaming Mouse" />
       <h2>Gaming Mouse</h2>
       <p>₹999</p>
       <button>Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="https://via.placeholder.com/200x150?text=Keyboard" alt="Keyboard" />
+      <img src="images/63400c68afe02d2b0c7aeb85-mechanical-gaming-keyboard-87-keys-small.jpg" alt="Keyboard" />
       <h2>Mechanical Keyboard</h2>
       <p>₹3,199</p>
       <button>Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="https://via.placeholder.com/200x150?text=Webcam" alt="Webcam" />
+      <img src="images/WebCam_02" alt="Webcam" />
       <h2>HD Webcam</h2>
       <p>₹1,799</p>
       <button>Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="https://via.placeholder.com/200x150?text=Bluetooth+Speaker" alt="Bluetooth Speaker" />
+      <img src="images/64fa227896af9d6493532529-jbl-boombox-2-portable-bluetooth.jpg" alt="Bluetooth Speaker" />
       <h2>Bluetooth Speaker</h2>
       <p>₹1,299</p>
       <button>Add to Cart</button>
     </div>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Tech Gadget Store. All rights reserved.</p>
-  </footer>
+    <div class="product-card">
+      <img src="images/smartwatch.jpg" alt="Smartwatch" />
+      <h2>Smartwatch</h2>
+      <p>₹1,899</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/powerbank.jpg" alt="Power Bank" />
+      <h2>Power Bank 20,000mAh</h2>
+      <p>₹1,099</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/usb-hub.jpg" alt="USB Hub" />
+      <h2>USB Hub 4-Port</h2>
+      <p>₹499</p>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>© 2025 Tech Gadget Store. All rights reserved.</footer>
+
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const current = window.location.pathname.split("/").pop() || 'index.html';
+    links.forEach(link => {
+      if (link.getAttribute("href") === current) {
+        link.classList.add("active");
+      }
+    });
+  </script>
 </body>
 </html>
