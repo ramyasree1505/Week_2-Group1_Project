@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Shop - Products</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DFF Products</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header><h1>Our Products</h1></header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <h2>🧺 Products List</h2>
+    <a onclick="filterProducts('all')">Show All</a>
+    <a onclick="filterProducts('farmFresh')">Farm-Fresh & Organic Produce</a>
+    <a onclick="filterProducts('handmade')">Natural & Handmade Goods</a>
+    <a onclick="filterProducts('wellness')">Artisanal & Wellness Products</a>
+    <a onclick="filterProducts('crafts')">Rural Crafts & Lifestyle</a>
+    <a onclick="filterProducts('specialty')">Specialty Farm Products</a>
   </nav>
-  <main>
-    <h2>Popular Items</h2>
-    <ul>
-      <li>Product 1 - ₹499</li>
-      <li>Product 2 - ₹899</li>
-      <li>Product 3 - ₹1,299</li>
-    </ul>
-  </main>
-  <footer>© 2025 My Shop</footer>
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="grid">
+      <!-- Products with category classes and prices -->
+      <div class="product farmFresh show"><h3>Organic Millets</h3><p>500g pack</p><p><strong>₹85</strong></p></div>
+      <div class="product farmFresh show"><h3>Sesame Oil</h3><p>Cold-pressed, 1L</p><p><strong>₹310</strong></p></div>
+      <div class="product farmFresh show"><h3>Raw Honey</h3><p>Natural & unprocessed</p><p><strong>₹230</strong></p></div>
+
+      <div class="product handmade show"><h3>Herbal Shampoo Bar</h3><p>Neem & Tulsi</p><p><strong>₹150</strong></p></div>
+      <div class="product handmade show"><h3>Eco Cleaner</h3><p>With citrus extract</p><p><strong>₹95</strong></p></div>
+      <div class="product handmade show"><h3>Soy Wax Candle</h3><p>Lavender scent</p><p><strong>₹240</strong></p></div>
+
+      <div class="product wellness show"><h3>Ashwagandha Powder</h3><p>100g pack</p><p><strong>₹120</strong></p></div>
+      <div class="product wellness show"><h3>Herbal Tea Mix</h3><p>Spice blend</p><p><strong>₹135</strong></p></div>
+      <div class="product wellness show"><h3>Oat Milk</h3><p>1L carton</p><p><strong>₹180</strong></p></div>
+
+      <div class="product crafts show"><h3>Jute Shopping Bag</h3><p>Handwoven</p><p><strong>₹260</strong></p></div>
+      <div class="product crafts show"><h3>Terracotta Pot</h3><p>Cooking or décor</p><p><strong>₹90</strong></p></div>
+      <div class="product crafts show"><h3>Bamboo Planter</h3><p>Eco-friendly gift</p><p><strong>₹140</strong></p></div>
+
+      <div class="product specialty show"><h3>Homemade Pickles</h3><p>Mango, Lemon, Garlic</p><p><strong>₹75</strong></p></div>
+      <div class="product specialty show"><h3>A2 Cow Ghee</h3><p>250ml bottle</p><p><strong>₹295</strong></p></div>
+      <div class="product specialty show"><h3>Millet Laddus</h3><p>Pack of 6</p><p><strong>₹110</strong></p></div>
+    </div>
+  </div>
+
+  <script>
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product');
+      products.forEach(product => {
+        product.classList.remove('show');
+        if (category === 'all' || product.classList.contains(category)) {
+          product.classList.add('show');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
