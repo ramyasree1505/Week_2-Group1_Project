@@ -1,120 +1,168 @@
-/* Products.css */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-/* Reset and global styles */
+/* Body and Container */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-    color: #333;
+/* Header */
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar */
 .sidebar {
-    background-color: #fff;
-    padding: 20px;
-    width: 220px;
-    position: fixed;
-    height: 100vh;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  background-color: #f0f0f0;
+  padding: 1rem;
+  width: 200px;
+  float: left;
 }
 
 .sidebar h2 {
-    margin-top: 0;
-    font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .sidebar a {
-    display: block;
-    margin: 10px 0;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a.active {
+  color: white;
+  background-color: #4CAF50;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
 }
 
 .sidebar a:hover {
-    color: #0078D7;
+  text-decoration: underline;
 }
 
+/* Main Content */
 .content {
-    margin-left: 240px;
-    padding: 20px;
+  margin-left: 220px;
+  padding: 1rem;
 }
 
-/* Grid styling */
+/* Product Grid */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Product card */
+/* Product Card */
 .product {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
 }
 
 .product:hover {
-    transform: translateY(-5px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .product img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 4px;
 }
 
-/* Product info always sticks to bottom */
 .product-info {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex-grow: 1;
+  text-align: center;
 }
 
 .product-info h3 {
-    margin: 0 0 5px;
-    font-size: 1rem;
-    color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .product-info p {
-    margin: 0 0 10px;
-    font-size: 0.9rem;
-    color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .product-info strong {
-    font-size: 1rem;
-    color: #000;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #4CAF50;
 }
 
-.product-info button {
-    align-self: stretch;
-    padding: 10px;
-    background-color: #0078D7;
-    border: none;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+button {
+  padding: 0.5rem 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.product-info button:hover {
-    background-color: #005fa3;
+button:hover {
+  background-color: #45a049;
 }
 
-/* Hide class for filtering */
-.hide {
-    display: none !important;
+/* Footer */
+footer {
+  clear: both;
+  text-align: center;
+  padding: 1rem;
+  background-color: #eee;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    float: none;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    margin-left: 0;
+  }
 }
