@@ -1,49 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Shop - Products</title>
-  <link rel="stylesheet" href="products.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Products</title>
+    <link rel="stylesheet" href="products.css" />
 </head>
 <body>
 
-  <header>
-    <h1>Our Products</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <h2>🧺 Products List</h2>
+        <a href="#" data-category="all">Show All</a>
+        <a href="#" data-category="electronics">Electronics</a>
+        <a href="#" data-category="fashion">Fashion & Accessories</a>
     </nav>
-  </header>
 
-  <main>
-    <h2>Popular Items</h2>
-    <ul>
-    <li>Product 1 - ₹499</li>
-    <li>Product 2 - ₹899</li>
-    <li>Product 3 - ₹1,299</li>
-    <li>Bluetooth Headphones - ₹1,499</li>
-    <li>Smartwatch - ₹2,499</li>
-    <li>Wireless Earbuds - ₹1,999</li>
-    <li>Stylish Sunglasses - ₹799</li>
-    <li>Casual Backpack - ₹1,299</li>
-    <li>Running Shoes - ₹2,999</li>
-    <li>Trendy Hoodie - ₹1,899</li>
-  </ul>
-  </main>
+    <!-- Main content -->
+    <div class="content">
+        <div class="grid">
+            <!-- Product Cards -->
+            <div class="product electronics">
+                <img src="images/Powerbank.jpg" alt="Powerbank" />
+                <div class="product-info">
+                    <h3>Powerbank</h3>
+                    <p>33 W (Backup up to 60 hours)</p>
+                    <strong>₹499</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-  <footer>© 2025 My Shop. All rights reserved.</footer>
+            <div class="product electronics">
+                <img src="images/Soundbar.jpg" alt="Sound Bar" />
+                <div class="product-info">
+                    <h3>Sound Bar</h3>
+                    <p>330 W with inbuilt Subwoofers</p>
+                    <strong>₹3500</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-  <script>
-    const links = document.querySelectorAll('nav a');
-    const current = window.location.pathname.split('/').pop() || 'index.html';
+            <div class="product electronics">
+                <img src="images/pendrive.jpg" alt="Pendrive" />
+                <div class="product-info">
+                    <h3>Pendrive</h3>
+                    <p>128 GB</p>
+                    <strong>₹1,299</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-    links.forEach(link => {
-      if (link.getAttribute('href') === current) {
-        link.classList.add('active');
-      }
-    });
-  </script>
+            <div class="product electronics">
+                <img src="images/headphone.jpg" alt="Bluetooth Headphones" />
+                <div class="product-info">
+                    <h3>Bluetooth Headphones</h3>
+                    <p>Wireless audio</p>
+                    <strong>₹1,499</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product electronics">
+                <img src="images/Smartwatch.jpg" alt="Smartwatch" />
+                <div class="product-info">
+                    <h3>Smartwatch</h3>
+                    <p>Fitness & notifications</p>
+                    <strong>₹2,499</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product electronics">
+                <img src="images/Earbuds.jpg" alt="Wireless Earbuds" />
+                <div class="product-info">
+                    <h3>Wireless Earbuds</h3>
+                    <p>Compact & powerful</p>
+                    <strong>₹1,999</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product fashion">
+                <img src="images/Sunglass.jpg" alt="Stylish Sunglasses" />
+                <div class="product-info">
+                    <h3>Stylish Sunglasses</h3>
+                    <p>UV protection</p>
+                    <strong>₹799</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product fashion">
+                <img src="images/Backpack.jpg" alt="Casual Backpack" />
+                <div class="product-info">
+                    <h3>Casual Backpack</h3>
+                    <p>Everyday use</p>
+                    <strong>₹1,299</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product fashion">
+                <img src="images/Shoes.jpg" alt="Running Shoes" />
+                <div class="product-info">
+                    <h3>Running Shoe</h3>
+                    <p>Comfort & performance</p>
+                    <strong>₹2,999</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product fashion">
+                <img src="images/Hoodie.jpg" alt="Trendy Hoodie" />
+                <div class="product-info">
+                    <h3>Trendy Hoodie</h3>
+                    <p>Warm & stylish</p>
+                    <strong>₹1,899</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>© 2025 My Shop. All rights reserved.</footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const category = this.getAttribute('data-category');
+                const products = document.querySelectorAll('.product');
+
+                products.forEach(product => {
+                    if (category === 'all' || product.classList.contains(category)) {
+                        product.style.display = 'flex';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+
+                // Optional: active link highlighting
+                document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
