@@ -127,11 +127,7 @@ nav a.active {
 }
 
 .about-intro, .about-team, .about-values {
-<<<<<<< HEAD
-  margin-bottom: 50px;
-=======
   margin-bottom: 30px;
->>>>>>> dabaabd0ff4d042f9acd29229f097c925dd687bb
   text-align: center;
 }
 
